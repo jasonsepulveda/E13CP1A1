@@ -1,0 +1,35 @@
+<!-- Utilizando un if detener el conteo regresivo cuando
+el valor llegue a cero y cambiar el texto de bomba por
+"boom" -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 id = "boom" > !!! La bomba !!! </h1>
+    <h2 id="timer">2</h2>
+    <script>
+        var timer_tag = document.getElementById('timer');
+        var timer = timer_tag.innerHTML;
+        timer = parseInt(timer);
+        setInterval(function(){
+          timer = timer - 1
+          if (timer <= 0){
+            document.getElementById("boom").innerHTML = "Boom!!!";
+            timer_tag.innerHTML = "";
+          }else {
+            timer_tag.innerHTML = timer
+          }
+          console.log(timer);
+          
+          console.log(timer_tag)
+
+        }, 1000);
+
+
+    </script>
+  </body>
+</html>
